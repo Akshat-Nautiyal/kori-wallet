@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>KORI Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+
+
+
+
+    <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+
+<style>
+.new_button1{
+    margin-right: 8rem;
+    
+}
+.new_button2{
+    margin-top: -3.5rem;
+    margin-left: 13rem;
+}
+
+</style>
+    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <script type="text/JavaScript">
+        function money_back()
+          {
+             
+            $('#second').hide();
+   $('#first').show();
+             
+          }
+        </script>  
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                
+                <div class="sidebar-brand-text mx-3">
+                    <!-- <img class="img-profile rounded-circle" src="C:/Users/Akshat Nautiyal/Desktop/startbootstrap-sb-admin-2-master/img/3.png" style="width: 90%;height: 14vh;"> -->
+                    KORI WALLET
+                </div>
+            </a>
+
+            <!-- Divider -->
+
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            
+
+            <!-- Heading -->
+            
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-wallet"></i>
+                    <span>FIAT Wallet</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Wallet Contains:</h6>
+                        <a class="collapse-item" href="addmoney.html" >Transfer Fiat</a>
+                        <a class="collapse-item" href="withdraw.html">Withdraw Request</a>
+                        <a class="collapse-item" href="history.html">Withdraw History</a>
+                        <a class="collapse-item" href="payment_details.html">Add Payment Details</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="kori_wallet_homepage.html">
+                    <i class="fas fa-wallet"></i>
+                    <span>KORI Wallet</span>
+                </a>
+                
+            </li>
+
+           
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="tables.html">
+                    <i class="fa fa-history"></i>
+                    <span>Transaction</span>
+                </a>
+                
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="index1.html">
+                    <i class="fa fa-key"></i>
+                    <span>Change Password</span></a>
+            </li>
+
+            
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+                   
+                    
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                       
+
+                        <!-- Nav Item - Alerts -->
+                       
+
+                        
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="username"></span>
+                                <i class="arrow down"></i>
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                
+                                
+                                <a class="dropdown-item"  data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+               
+  <!----------------------heree             ----------------->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <h2 class="m-0 font-weight-bold text-primary">Withdraw Request</h6>
+                   <ul class="nav nav-tabs" id="myTab" role="tablist">
+ <li class="nav-item">
+   <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Withdraw Request</a>
+ </li>
+ 
+ <li class="nav-item">
+   <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" onclick="check()">Withdraw List</a>
+ </li>
+ <!-- <li class="nav-item">
+   <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+ </li> -->
+</ul>
+<div class="tab-content" id="myTabContent">
+
+
+
+
+
+ <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+     <div  id = "first">
+
+    
+    <div class="card shadow mb-4">
+                       <div class="card-header py-3">
+                           <h6 class="m-0 font-weight-bold text-primary">Withdraw Request</h6>
+                       </div>
+                       <div class="card-body">
+                        <div class="input-w">
+                            <label class="your-input">Withdrawing Amount </label>
+     <input type="number" id="your-input" required/></div><br>
+                            
+                    <input type="text" value="EURO" style="display:none;" id="your-input1" />
+                    <div class="input-w"><label class="your-input">Private Key</label><input style="width:61%;" id="your-input500" type="text" name="your-input500"  placeholder="Private Key" /> </div> 
+                         
+                        <br>
+                        <br>
+        <div class="formrow">
+              <label for="checky" >Select Payment Method </label>
+              <span><input name="checkybox"  type="radio" value="BankAccount" placeholder="" />Bank Account</span>
+              <!-- <div class="clearboth"></div> -->
+              <span><input name="checkybox"  type="radio" value="PhoneNumber" placeholder="" />Phone Number</span>
+              
+        </div>
+        <br>
+                             <br>               
+                             <br>
+                             <br>
+                             <br>
+                        
+                            <button class = "button1"  id ="money-withdrawtestfinal" value="Submit">Confirm</button>
+                       </div>
+               
+                   </div>
+                </div>
+
+
+                <div id="second" style="display: none;">
+
+                        <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary"> Confirm Withdraw Request</h6>
+                                </div>
+                                <div class="card-body">
+                                 <div class="input-w">
+                                     <label class="your-input">Withdrawing Amount </label>
+              <input type="number"  id="your-input-amount" disabled/></div><br>
+                                     
+                             <input type="text" value="EURO" style="display:none;" id="your-input1" />
+                           
+                                  
+                                 <br>
+                                 <br>
+                 <div class="formrow">
+                       <label for="checkybox">Select Payment Method </label>
+                       <span><input name="checkybox" id="checkyboxconfirm" type="radio" value="Bank Account" placeholder="" disabled/>Bank Account</span>
+                       <div class="clearboth"></div>
+                       <span><input name="checkybox" id="checkybox1confirm" type="radio" value="Phone Number" placeholder="" disabled/>Phone Number</span>
+                       
+                 </div>
+                 <br>
+                                      <br>               
+                                      <br>
+                                      <br>
+                                      <br>
+                                 <div class="new_button1">
+                                        <button class = "button1"  id ="money-withdrawtest" value="Submit">Confirm</button>
+                                 </div>
+                                     
+
+                                    <div class="new_button2">
+                                            <button class = "button1" onclick="money_back()"">Back</button>
+                                    </div>
+                                      
+                                     
+                                </div>
+                        
+                            </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+                </div>
+
+<!------------------------------------ end of div1 -->
+
+
+<!-- <div class="tab-pane" id="homefinal" role="tabpanel" aria-labelledby="home-tabfinal"><div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary"> Confirm Withdraw Request</h6>
+                    </div>
+                    <div class="card-body">
+                     <div class="input-w">
+                         <label class="your-input">*  Withdrawing Amount </label>
+  <input type="number"  id="your-input-amount" disabled/></div><br>
+                         
+                 <input type="text" value="EURO" style="display:none;" id="your-input1" />
+               
+                      
+                     <br>
+                     <br>
+     <div class="formrow">
+           <label for="checkybox">* Select payment method </label>
+           <span><input name="checkybox" id="checkyboxconfirm" type="radio" value="Bank Account" placeholder="" disabled/>Bank Account</span>
+           <div class="clearboth"></div>
+           <span><input name="checkybox" id="checkybox1confirm" type="radio" value="Phone Number" placeholder="" disabled/>Phone Number</span>
+           
+     </div>
+     <br>
+                          <br>               
+                          <br>
+                          <br>
+                          <br>
+                     
+                         <button class = "button1"  id ="money-withdrawtest" value="Submit">Confirm</button>
+                         <button   id ="money-back" onclick="money_back()">Back</button>
+                    </div>
+            
+                </div></div> -->
+
+
+
+
+
+
+
+
+
+
+ <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><div class="card shadow mb-4">
+                       <div  class="card-header py-3">
+                           <h6 class="m-0 font-weight-bold text-primary">Withdraw List</h6>
+                       </div>
+                       <div class="card-body">
+                           <div class="table-responsive">
+                               <table class="table table-bordered" id="payment_table55" width="100%" cellspacing="0">
+                                   <thead>
+                                       
+                                       <tr>
+
+                                       
+                                           <th>Amount</th>
+                                           <th>Payment Method</th>
+                                             <th>Process Date</th>
+                                             <th>Action</th>
+                                          <!--  <th>Transaction Hash</th> -->
+                                       
+
+                                       </tr>
+                                   </thead>
+                                  
+                                   <tbody>
+                                       
+                                       
+                                   </tbody>
+                               </table>
+                           </div>
+                       </div>
+               
+                   </div></div>
+
+</div>
+                  
+                 
+                 
+                   
+
+               </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                     <button class = "btn btn-primary" id = "add-logout">Log Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+function check(){
+
+   
+    $('#payment_table55').empty();
+    var append1 = '<tr><td>Amount</td><td>Type</td><td>Date</td><td>Action</td></tr>';
+    $('#payment_table55').append(append1);
+    session.defaultSession.cookies.get({},(err,cookies)=>{
+    cookies.map(function (cookiesdata) {
+
+        
+                                            
+                if (cookiesdata.name == "login") {
+
+                                            
+                var obj = JSON.parse(cookiesdata.value);
+
+                var publickey = obj.UserDetails.publickey;
+           
+                    
+        Request.post({
+            "headers": { "content-type": "application/json" },
+            "url": "https://api-prod.kori.biz/api/v1/getWithdrawreq",
+            "body": JSON.stringify({
+                "senderkey": publickey
+            })
+        }, (error, response, body) => {
+            if(error) {
+                Swal.fire({
+                    type: 'error',
+                    title: "It's a server error ...",
+                    text: 'Please send request again!',
+                    footer: 'Try Again'
+                  })
+                console.log("error");
+            }
+            else{
+              //  alert("here");
+                var da = JSON.parse(body);
+                console.log("below data");
+              
+               console.log(da);
+                var pay = da.data;
+                var ik = 1;
+                    for (var index = 0; index < pay.length; index++) {
+                    // if(pay[index]['status']==0)
+                    {
+                        unixTimestamp = pay[index]['currenttime'];
+                        
+                        var a = new Date(unixTimestamp * 1000);
+                        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                        var year = a.getFullYear();
+                        var month = months[a.getMonth()];
+                        var date = a.getDate();
+                        var hour = a.getHours();
+                        var min = a.getMinutes();
+                        var sec = a.getSeconds();
+                        var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+                      
+                        if(pay[index]['withdrawtype']=="Bank Account"){
+                            var b = 0;
+                           
+
+
+                        var append = '<tr id ='+ik+'><td>'+pay[index]['amount']+'</td><td>'+pay[index]['withdrawtype']+' </td><td>'+time+'</td><td><button class="button1" onclick="takeValue('+ik+','+pay[index]['amount']+','+pay[index]['currenttime']+','+pay[index]['id']+','+pay[index]['status']+','+pay[index]['transactionid']+','+b+',this)">Cancel</button></td></tr>';
+                       console.log(append);
+                            ik = ik+1;
+                    }
+                        else{
+                        var b = 1;
+
+
+                        var append = '<tr id ='+ik+'><td>'+pay[index]['amount']+'</td><td>'+pay[index]['withdrawtype']+' </td><td>'+time+'</td><td><button class="button1" onclick="takeValue('+ik+','+pay[index]['amount']+','+pay[index]['currenttime']+','+pay[index]['id']+','+pay[index]['status']+','+pay[index]['transactionid']+','+b+',this)">Cancel</button></td></tr>';
+                   console.log(append);
+                   ik = ik+1;
+                }
+                 $('#payment_table55').append(append);
+                
+                     
+                }
+                   
+              }
+            }
+
+        });
+                    
+                }
+                });
+            })
+            document.getElementById("myTab").children[1].style.display = "block";
+}
+
+
+       function takeValue(ik,amount,currenttime,id,status,transactionid,b){
+           
+           if(b==0){
+               var withdrawtype = "Bank Account";
+           }
+           else{
+            var withdrawtype = "Phone Number";
+           }
+           session.defaultSession.cookies.get({},(err,cookies)=>{
+                                            if(err)console.error(err);
+
+
+                                            cookies.map(function (cookiesdata) {
+
+                                          
+                                            if (cookiesdata.name == "login") {
+                                            
+                                                                        
+                                            var obj = JSON.parse(cookiesdata.value);
+                                        
+                                        var publickey = obj.UserDetails.publickey;
+                                        sendingfinaltakevalue(ik,amount,currenttime,id,publickey,status,transactionid,withdrawtype);
+                                                   
+                                            }
+                                            });
+                                     })
+
+
+
+  function sendingfinaltakevalue(ik,amount,currenttime,id,publickey,status,transactionid,withdrawtype){
+   
+    
+                                    Request.post({
+                                            "headers": { "content-type": "application/json" },
+                                            "url": "https://api-prod.kori.biz/api/v1/cancelWithdrawreq",
+                                            "body": JSON.stringify({
+                                                "amount": amount,
+                                                "currenttime": currenttime,
+                                                "id": id,
+                                                "publickey" : publickey,
+                                                "status": status,
+                                                "transactionid": transactionid,
+                                                "withdrawtype" : withdrawtype
+
+                                            })
+                                        }, (error, response, body) => {
+                                            if(error) {
+                                             
+                                                Swal.fire({
+                                                        type: 'server error',
+                                                        title: "It's a server error ...",
+                                                        text: 'Please send request again!',
+                                                        footer: 'Try Again'
+                                                      })
+                                                console.log("private key or public key or both are wrong", error);
+                                            }
+                                            else{  
+                                                console.log(body);
+                                                var successdata = JSON.parse(body);
+                                                console.log(successdata)
+                                               if(successdata.code==0)
+                                               {
+                                               
+                                                document.getElementById(ik).remove();
+                                              
+                                               Swal.fire({
+                                                            type: 'success',
+                                                            title: 'Congrats',
+                                                            text: 'Deleted Succesfully!',
+                                                            // footer: 'Try Again'
+                                                          })
+                                                        
+                                                console.log("KRI is successfully send");
+                                               
+                                               }
+                                              else{
+                                               
+                                                    Swal.fire({
+                                                                type: 'error',
+                                                                title: 'Oops...',
+                                                                text: 'Deletion Unsuccesfull!',
+                                                                footer: 'Try Again'
+                                                              })
+                                                }
+                                               
+                                                }
+                                        });
+                            }
+
+
+ }
+
+    </script>
+
+     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+
+    <script src = "afterlogin.js" ></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    
+
+  
+    
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+.one {
+    width: 100%;
+    height: 37vh;
+    min-height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* background: black; */
+}
+
+.two {
+    width: 31.4%;
+    height: 27vh;
+    text-align: center;
+    vertical-align: center;
+    /* background: #13855c; */
+    /* background-image: url('/C:/Users/Akshat Nautiyal/Desktop/startbootstrap-sb-admin-2-master/img/1.png'); */
+    /* background-size: calc(5.75em + 5.375rem) calc(5.75em + 5.375rem) */
+    /* background-size: cover; */
+}
+
+.three {
+    width: 22%;
+    height: 27vh;
+    background-color: #093b29;
+    /* background-image: url('/C:/Users/Akshat Nautiyal/Desktop/startbootstrap-sb-admin-2-master/img/3.png'); */
+    /* background-size: calc(7.75em + 5.375rem) calc(7.75em + 5.375rem) */
+    /* background-size: cover; */
+}
+
+.four {
+    width: 22%;
+    height: 27vh;
+    /* align-content: center; */
+    background-color: #42e7ab;
+    /* background-image: url('/C:/Users/Akshat Nautiyal/Desktop/startbootstrap-sb-admin-2-master/img/2.png'); */
+    /* background-size: calc(7.75em + 5.375rem) calc(7.75em + 5.375rem) */
+    /* background-size: cover; */
+}
+
+.btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.btn:hover,
+.btn:focus {
+    color: #fff;
+    outline: 0;
+}
+
+.fifth {
+    border-color: #8e44ad !important;
+    border-radius: 0;
+    color: #8e44ad;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 150ms ease-in-out;
+}
+
+.fifth:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: #8e44ad;
+    z-index: -1;
+    transition: width 150ms ease-in-out;
+}
+
+.fifth:hover {
+    color: #fff;
+}
+
+.fifth:hover:after {
+    width: 110%;
+}

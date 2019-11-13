@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>KORI Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+   <!--  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <style type="text/css">
+        table {
+    border-collapse: collapse;
+    border-radius: 20px;
+    background: none;
+    border: 2px solid #FAB87F;
+        table-layout: fixed;
+    width: 366px;
+}
+table td {
+    width: 180px;
+    word-wrap: break-word;
+}
+.onee {
+    /* width: 100%; */
+    /* height: 37vh; */
+    /* min-height: fit-content; */
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    /* background: black; */
+}
+.a {
+     padding-left: 10em;
+}
+.b {
+    
+        padding-left: 27em;
+}
+.container-fluid {
+    padding-left: 20.5rem;
+    padding-top: 3em;
+    padding-right: 1.5rem;
+}
+    </style>
+</head>
+
+<body onload="ShowHideDiv(1)" id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                
+                <div class="sidebar-brand-text mx-3">
+                    <!-- <img class="img-profile rounded-circle" src="C:/Users/Akshat Nautiyal/Desktop/startbootstrap-sb-admin-2-master/img/3.png" style="width: 90%;height: 14vh;"> -->
+                    KORI WALLET
+                </div>
+            </a>
+
+            <!-- Divider -->
+
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-wallet"></i>
+                    <span>FIAT Wallet</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    
+                    <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Wallet Contains:</h6>
+                            <a class="collapse-item" href="addmoney.html" >Transfer FIAT</a>
+                            <a class="collapse-item" href="withdraw.html">Withdraw Request</a>
+                            <a class="collapse-item" href="history.html">Fiat History</a>
+                            <a class="collapse-item" href="payment_details.html">Add Payment Details</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="kori_wallet_homepage.html">
+                    <i class="fas fa-wallet"></i>
+                    <span>KORI Wallet</span>
+                </a>
+                
+            </li>
+
+           
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="tables.html">
+                    <i class="fa fa-history"></i>
+                    <span>Transaction</span>
+                </a>
+                
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="index1.html">
+                    <i class="fa fa-key"></i>
+                    <span>Change Password</span></a>
+            </li>
+
+            
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+                   
+                    
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                       
+
+                        <!-- Nav Item - Alerts -->
+                       
+
+                        
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="username"></span>
+                                <i class="arrow down"></i>
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                
+                                
+                                <a class="dropdown-item"  data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+               <div class="onee">
+                <label for="chkPassport" class="a">
+                            ADD BANK ACCOUNT
+                            <input type="radio" checked name="ak" id="chkPassport" value="1" onclick="ShowHideDiv(1)" />
+                            
+                        </label>
+                         <label for="chkPassport" class="b">
+                            ADD PHONE NUMBER
+                            <input type="radio" name="ak" id="chkPassport" value="2" onclick="ShowHideDiv(2)" />
+                            
+                        </label>
+                    </div>
+                <div class="container-fluid">
+                 
+                  
+ 
+                    <table id="dvPassport" style="display: none" cellpadding = "10">
+                     <tr>
+                    <td colspan="4" align="center"> <h5 align="center">Add Payment Details</h5></td>
+                    
+
+                    </td>
+                    </tr>
+
+                    <tr>
+                    <td>ACCOUNT NAME</td>
+                    <td><input type="text" id="accountname" readonly="readonly" maxlength="30"/>
+
+                    </td>
+                    </tr>
+                     
+
+                    <tr>
+                    <td>ACCOUNT NUMBER</td>
+                    <td><input type="text" id="accountnuber" readonly="readonly"  maxlength="30"/>
+
+                    </td>
+                    </tr>
+                     
+
+
+
+                    <tr>
+                    <td>BANK NAME</td>
+                    <td><input type="text" id="bankname" readonly="readonly" maxlength="30"/>
+
+                    </td>
+                    </tr>
+                     
+
+                    <tr>
+                    <td>BANK SHORT CODE</td>
+                    <td><input type="text" id="shortcode" readonly="readonly"  maxlength="40" />
+
+                    </td>
+                    </tr>
+                     
+
+                    <tr>
+                    <td>BANK IBAN</td>
+                    <td><input type="text" id="iban" readonly="readonly"  maxlength="6" />
+
+                    </td>
+                    </tr>
+                     
+
+                    <tr>
+                    <td>BANK SWIFT</td>
+                    <td><input type="text" id="swift" readonly="readonly"  maxlength="30" />
+
+                    </td>
+                    </tr>
+                      <tr>
+                        <td colspan="4" align="center">
+                        <input class = "button1" id="add-bank-account1" type="submit" value="Edit" />
+                        <input class = "button1" id="add-bank-account5" type="submit" value="Submit">
+
+                        </td>
+                        </tr>
+
+                      
+                     
+                    </table>
+                     
+
+     <script type="text/javascript">
+                    //  document.getElementById('dvPassport').style.display = "none";
+                    //  document.getElementById('txtPassportNumber').style.display = "none";
+                     
+                     
+                            
+                     function ShowHideDiv(which) {
+                       
+                                if(which == "1") {
+
+                                 
+                                   
+                                    session.defaultSession.cookies.get({},(err,cookies)=>{
+                                    if(err)console.error(err);
+                                    var user=cookies[0].value;
+                                    var obj = JSON.parse(user);
+                                    //console.log(obj.UserDetails);
+                                    var publickey = obj.UserDetails.publickey;
+                                    gettingDetails(publickey,which);
+                                    })
+                            }
+                             if(which == "2") {
+                                 
+                                    session.defaultSession.cookies.get({},(err,cookies)=>{
+                                    if(err)console.error(err);
+                                    var user=cookies[0].value;
+                                    var obj = JSON.parse(user);
+                                    //console.log(obj.UserDetails);
+                                    var publickey = obj.UserDetails.publickey;
+                                    gettingDetails(publickey,which);
+                                    })
+                                }
+
+
+
+ function gettingDetails(publickey,which){
+    
+        Request.post({
+            "headers": { "content-type": "application/json" },
+            "url": "https://api-prod.kori.biz/api/v1/getPaymentdetails",
+            "body": JSON.stringify({
+                "senderkey": publickey
+            })
+        }, (error, response, body) => {
+            if(error) {
+                Swal.fire({
+                    type: 'error',
+                    title: "It's a server error ...",
+                    text: 'Please send request again!',
+                    footer: 'Try Again'
+                  })
+            }
+            else{
+                      
+            // console.log(b);
+            // console.log(body);
+            var successdata = JSON.parse(body);
+            if(successdata.code==0)
+            {
+               
+               console.log(successdata);
+                    
+                if(which == 2){
+                    
+
+                    document.getElementById('txtPassportNumber').style.display = "block";
+                    document.getElementById('dvPassport').style.display = "none";
+                     document.getElementById('add-mobile-payment6').style.display = "none";
+                     document.getElementById('add-bank-account10').style.display = "block";
+                    
+                    document.getElementById('code').value = successdata.mobiledetailsdata[0].countrycode;
+                    document.getElementById('mobileno').value = successdata.mobiledetailsdata[0].mobilenumber;
+                    document.getElementById('operator').value = successdata.mobiledetailsdata[0].operatorname;
+
+                    document.getElementById('add-bank-account10').onclick = function() {
+                            document.getElementById('code').removeAttribute('readonly');
+                            document.getElementById('mobileno').removeAttribute('readonly');
+                            document.getElementById('operator').removeAttribute('readonly');
+                            document.getElementById('add-bank-account10').style.display = "none";
+                            document.getElementById('add-mobile-payment6').style.display = "block";
+                        };  
+                 
+                }
+                else{
+                    document.getElementById('add-bank-account1').style.display = "block";
+                    
+                    document.getElementById('add-bank-account5').style.display = "none";
+                    document.getElementById('dvPassport').style.display = "block";
+                    document.getElementById('txtPassportNumber').style.display = "none";
+
+
+                    document.getElementById('accountname').value = successdata.bankdetailsdata[0].accountname;
+                    document.getElementById('accountnuber').value = successdata.bankdetailsdata[0].accountnumber;
+                    document.getElementById('bankname').value = successdata.bankdetailsdata[0].bankname;
+                    document.getElementById('shortcode').value = successdata.bankdetailsdata[0].iban;
+                    document.getElementById('iban').value = successdata.bankdetailsdata[0].shortcode;
+                    document.getElementById('swift').value = successdata.bankdetailsdata[0].swift;
+
+                    document.getElementById('add-bank-account1').onclick = function() {
+                            document.getElementById('accountname').removeAttribute('readonly');
+                            document.getElementById('accountnuber').removeAttribute('readonly');
+                            document.getElementById('bankname').removeAttribute('readonly');
+                            document.getElementById('shortcode').removeAttribute('readonly');
+                            document.getElementById('iban').removeAttribute('readonly');
+                            document.getElementById('swift').removeAttribute('readonly');
+                            document.getElementById('add-bank-account1').style.display = "none";
+                            document.getElementById('add-bank-account5').style.display = "block";
+                        };                         
+                     }
+                
+                
+              
+            }
+            else{
+                Swal.fire({
+                    type: 'error',
+                    title: "Oops ...",
+                    text: 'Server error',
+                    // footer: 'Try Again'
+                  })
+                  // dialog.showMessageBox({message:"Please send request again",title:"Unsuccesfull"});
+
+            }
+            }
+            });
+                            }
+
+
+
+                            }
+                         
+                    </script>
+                       
+                        
+                       
+
+                    <table  id="txtPassportNumber" style="display: none" cellpadding = "10">
+                     <tr>
+                    <td colspan="4" align="center"> <h5 >Details</h5></td>
+                    
+
+                    </td>
+                    </tr>
+
+                    <tr>
+                    <td>ENTER CODE</td>
+                    <td><input type="text" id="code" readonly="readonly"  maxlength="30"/>
+
+                    </td>
+                    </tr>
+                     
+
+                    <tr>
+                    <td>ENTER MOBILE PHONE NUMBER</td>
+                    <td><input type="text" id="mobileno" readonly="readonly"  maxlength="30"/>
+
+                    </td>
+                    </tr>
+                     
+                    
+
+
+                    <tr>
+                    <td>ENTER OPERATOR</td>
+                    <td><input type="text" id="operator" readonly="readonly"  maxlength="30"/>
+
+                    </td>
+                    </tr>
+                     
+
+            
+                     
+
+               
+                      <tr>
+                        <td colspan="4" align="center">
+                        <input class = "button1" id="add-bank-account10" type="submit" value="Edit" />
+                        <input class = "button1" id="add-mobile-payment6" type="submit" value="Submit">
+
+                        </td>
+                        </tr>
+
+                      
+                     
+                    </table>
+                
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+                </div>
+                <div class="modal-body">Do you want to "LOGOUT"?</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                     <button class = "btn btn-primary" id = "add-logout">Log Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+
+    <script src = "afterlogin.js" ></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    
+
+    
+    
+</body>
+
+</html>

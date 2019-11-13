@@ -1,0 +1,85 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5em;
+    width: 8em;
+      border-right: 1px dotted grey;
+    clear: both; / clear space around (left and right side), this pushes other elements downward /   
+  }
+  
+  div.content {
+      margin: 0;
+    padding: 0;
+    clear: both;
+  }
+  
+  div.content div {
+    padding: 0 10px;
+  }
+  
+  h1 {
+      font-family: Verdana, Geneva, sans-serif;
+    margin-top: 0;
+  }
+  
+  nav ul li {
+    margin: 0.5em 0;
+    padding: 0.3em;
+    background: black;
+    color: white;
+    text-align: right;
+  }
+  
+  nav li a { text-decoration: none; }
+  nav li a:link {color:white;}      / unvisited link /
+  nav li a:visited {color:white;}  / visited link /
+  nav li a:hover {color:#FF0000;}  / mouse over link /
+  nav li a:active {color:#0000FF;}  / selected link /
+  
+  nav li.current {
+      width: 16em;
+      text-align:left;
+  }
+  
+  nav li.current a {
+      margin-left: 9em;
+      font-weight: bold;
+  }
+  
+  
+  #page3 {
+    background-color: #e0ebeb;
+  }
+  
+  footer {
+      clear: both;
+    font-style: italic;
+    color: grey;
+    margin: 0.5em;
+  }
+  
+  / rules for larger screens (mobile first!): /
+  @media only screen and (min-width: 801px) {
+      / rules that only apply for screens larger than 800px /
+      nav ul {
+        width: 8em;
+        float: left;
+          margin-top: 1em;
+      }
+      div.content {
+        float: left;
+          margin: 1.8em 0 0 9em;
+        max-width: 70%;
+        clear: none;
+      }
+      div.content div {
+        padding: 0 20px;
+      }
+  } / /@media /
+  
