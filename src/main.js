@@ -1,49 +1,9 @@
 const { dialog } = require('electron');
 const { app, BrowserWindow } = require('electron');
-// const { autoUpdater } = require('electron-updater');
-const isDev = require('electron-is-dev');
-const { autoUpdater } = require('electron')
-const { version } = require('./package')
 
-const server = 'https://github.com/Akshat-Nautiyal/kori-wallet'
-const feed = `${server}/Akshat-Nautiyal/kori-wallet/${process.platform}-${process.arch}/${app.getVersion()}`
 
 var path = require('path')
 
-// // Setup logger
-
-// autoUpdater.logger = require('electron-log');
-// autoUpdater.logger.transports.file.level = 'info';
-
-// // Setup updater events
-
-// autoUpdater.on('checking-for-update', () =>{
-//   console.log('checking for update....');
-// });
-
-// autoUpdater.on('update-available', (info) => {
-//   console.log('Update Available');
-//   console.log('Version', info.version);
-//   console.log('Release date', info.releaseDate);
-// });
-
-
-// autoUpdater.on('update-not-available', () => {
-//   console.log('Update not available');
-// });
-
-// autoUpdater.on('download-progress', (progress) => {
-//   console.log(`Progress ${Math.floor(progress.percent)}`);
-// });
-
-// autoUpdater.on('update-downloaded', (info) => {
-//   console.log('Update downloaded');
-//   autoUpdater.quitAndInstall();
-// });
-
-// autoUpdater.on('error', (error) => {
-//   console.error(error);
-// });
 
 
 
@@ -51,9 +11,7 @@ var path = require('path')
  global.win
 
 function createWindow () {
-  if(!isDev){
-    autoUpdater.checkForUpdates();
-  }
+  
   // Create the browser window.
   win = new BrowserWindow({
     width: 1200,
@@ -71,7 +29,7 @@ function createWindow () {
  
 
   // Open the DevTools.
-//win.webContents.openDevTools()
+win.webContents.openDevTools()
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -128,48 +86,9 @@ app.on('activate', () => {
 //   console.error(message)
 // })
 
-
-
-
-
-console.log(`Current version: ${version}`)
-
-autoUpdater.setFeedURL(feed)
-// autoUpdater.checkForUpdates()
-setInterval(() => {
-  autoUpdater.checkForUpdates()
-},1 * 60 * 1000)
-
-autoUpdater.on('checking-for-update', () => {
-  console.log('checking-for-update')
+require('update-electron-app')({
+  repo: 'Akshat-Nautiyal/kori-wallet',
+  updateInterval: '5 minute'
+  // logger: require('electron-log')
 })
 
-autoUpdater.on('update-available', () => {
-  console.log('update-available')
-})
-
-autoUpdater.on('update-not-available', () => {
-  console.log('update-not-available')
-})
-
-autoUpdater.on(
-  'update-downloaded',
-  (event, releaseNotes, releaseName, updateURL) => {
-    console.log('update-downloaded', {
-      event,
-      releaseNotes,
-      releaseName,
-      updateURL
-    })
-  }
-)
-
-autoUpdater.on('error', error => {
-  console.log('error', { error })
-})
-
-
-
-// autoUpdater.setFeedURL(feed)
-
- 

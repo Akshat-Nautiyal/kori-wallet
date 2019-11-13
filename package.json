@@ -23,22 +23,19 @@
     "packageManager": "npm",
     "executableName": "kori"
   },
- 
   "build": {
-    "appId": "com.github.Akshat-Nautiyal.kori-wallet",
-    "publish": [{
-             "provider": "github",
-             "owner": "Akshat-Nautiyal",
-             "repo": "kori-wallet"
-    }]
+    "appId": "kori",
+    "linux": {
+      "category": "wallet"
+    },
+    "win": {
+      "category": "wallet"
+    }
   },
   "dependencies": {
     "cookies": "^0.7.3",
     "crypto": "^1.0.1",
     "dpkg": "^1.0.0",
-    "electron-is-dev": "^1.1.0",
-    "electron-log": "^3.0.9",
-    "electron-updater": "^4.2.0",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "jstorage": "^0.4.8",
