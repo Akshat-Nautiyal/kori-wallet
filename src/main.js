@@ -88,7 +88,9 @@ app.on('activate', () => {
 
 require('update-electron-app')({
   repo: 'github-Akshat-Nautiyal/kori-wallet',
-  updateInterval: '5 minute'
+  updateInterval: '5 minute',
+  logger: console,
+  notifyUser: true
   // logger: require('electron-log')
 })
 
